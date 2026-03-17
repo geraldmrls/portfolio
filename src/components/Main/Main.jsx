@@ -46,16 +46,17 @@ function Main() {
                                         <h2>{project.title}</h2>
                                         <ArrowUpRight className="arrow-up-right-icon" />
                                     </div>
-                                    <p className="project-overview">{project.description}</p>
+                                    <p className="project-description">{project.description}</p>
                                     <div className="techs-container">
                                         {generateTech(project)}
                                     </div>
-                                    <div className="project-buttons-container">
 
+                                    <div className="project-buttons-container">
                                         <a href={project.vercel} target="_blank">
                                             <button className="btn-live-demo">
                                                 <OpenLink className="open-link-icon" />
-                                                Live Demo
+                                                <span className="live-text">Live</span>
+                                                <span>Demo</span>
 
                                             </button>
                                         </a>

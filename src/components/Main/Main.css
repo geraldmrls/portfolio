@@ -7,6 +7,7 @@ main {
   display: flex;
   align-items: center;
 }
+
 .section-label::before {
   content: "";
   flex: 1;
@@ -20,6 +21,7 @@ main {
   height: 1px;
   background: linear-gradient(to left, transparent, gray);
 }
+
 .section-label span {
   color: var(--primary-color);
   font-size: 0.8rem;
@@ -52,6 +54,7 @@ main {
   gap: 30px;
   margin-top: 40px;
 }
+
 .project-card {
   border-radius: 20px;
   border: 1px solid rgb(46, 46, 46);
@@ -80,9 +83,9 @@ main {
   height: 250px;
   position: relative;
   overflow: hidden;
-  border-top-left-radius: 20px; /* match your card's border-radius */
+  border-top-left-radius: 20px;
+  /* match your card's border-radius */
   border-top-right-radius: 20px;
-  
 }
 
 .project-card:hover .project-image {
@@ -117,6 +120,7 @@ main {
 .project-details {
   padding: 20px 30px;
 }
+
 .project-name-container {
   display: flex;
   align-items: center;
@@ -124,7 +128,7 @@ main {
   margin-bottom: 15px;
 }
 
-.project-overview {
+.project-description {
   color: #999999;
   margin-bottom: 15px;
 }
@@ -132,6 +136,7 @@ main {
 .techs-container {
   margin-bottom: 25px;
 }
+
 .techs {
   color: lightgray;
   font-size: 0.9rem;
@@ -155,6 +160,14 @@ main {
   align-items: center;
 }
 
+.project-buttons-container span {
+  color: oklch(0.65476 0.11501 213.794);
+}
+
+.live-text{
+  margin-right: 4px;
+}
+
 .btn-live-demo {
   padding: 8px 17px;
   border: none;
@@ -170,7 +183,7 @@ main {
 }
 
 .btn-live-demo:hover {
-  background-color:  rgba(0, 191, 255, 0.24);  
+  background-color: rgba(0, 191, 255, 0.24);
 }
 
 .btn-git-link {
@@ -208,4 +221,60 @@ main {
 
 a {
   text-decoration: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (width <=768px) {
+
+  .project-image-container{
+    height: 180px;
+  }
+
+  .live-text {
+    display: none;
+  }
+
+  .project-description {
+    display: none;
+  }
+
+  .brief-description-container h1 {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+
+  .brief-description-container p {
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .techs-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .techs {
+    margin-right: 0;
+  }
+
+  .project-buttons-container {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .btn-live-demo,
+  .btn-git-link {
+    margin-right: 0;
+    justify-content: center;
+  }
 }

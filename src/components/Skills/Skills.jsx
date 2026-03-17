@@ -4,6 +4,21 @@ import CodeIcon from "../../assets/code-icon.svg?react"
 import ToolsIcon from "../../assets/tools-icon.svg?react"
 import MethodIcon from "../../assets/method-icon.svg?react"
 
+// techs
+import ReactIcon from "../../assets/react-icon.svg?react"
+import JSicon from "../../assets/js-icon.svg?react"
+import HTMLicon from "../../assets/html-icon.svg?react"
+import CSSicon from "../..//assets/css-icon.svg?react"
+import ViteIcon from "../../assets/vite-icon.svg?react"
+import AxiosIcon from "../../assets/axios-icon.svg?react"
+
+// toos
+import GitIcon from "../../assets/git-icon.svg?react"
+import GitHubIcon from "../../assets/github-icon.svg?react"
+import VercelIcon from "../../assets/vercel-icon.svg?react"
+import VSCode from "../../assets/vscode-icon.svg?react"
+import NPMIcon from "../../assets/npm-icon.svg?react"
+
 function Skills() {
     return (
         <>
@@ -18,11 +33,14 @@ function Skills() {
                         <h3>Frontend Development</h3>
                     </div>
                     <div className="skill-tags-container">
-                        <span className="skill-tag">React</span>
-                        <span className="skill-tag">JavaScript</span>
-                        <span className="skill-tag">HTML/CSS</span>
-                        <span className="skill-tag">Vite</span>
-                        <span className="skill-tag">Axios</span>
+                        <ReactIcon className="react-icon" />
+                        <JSicon className="js-icon" />
+                        <HTMLicon className="html-icon" />
+                        <CSSicon className="css-icon" />
+                        <ViteIcon className="vite-icon" />
+                        <AxiosIcon className="axios-icon" />
+
+
                     </div>
                 </div>
 
@@ -33,11 +51,14 @@ function Skills() {
                         <h3>Tools & Workflow</h3>
                     </div>
                     <div className="skill-tags-container">
-                        <span className="skill-tag">Git</span>
-                        <span className="skill-tag">GitHub</span>
-                        <span className="skill-tag">Vercel</span>
-                        <span className="skill-tag">VS code</span>
-                        <span className="skill-tag">npm</span>
+                        <GitIcon className="git-icon" />
+                        <GitHubIcon className="github-icon-skill" />
+                        <VercelIcon className="vercel-icon" />
+                        <VSCode className="vscode-icon" />
+                        <NPMIcon className="npm-icon" />
+
+
+
                     </div>
 
                 </div>

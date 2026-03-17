@@ -1,3 +1,9 @@
+
+// techs
+
+
+
+
 export const projects = [
     {
         image: "/cinevalut.png",

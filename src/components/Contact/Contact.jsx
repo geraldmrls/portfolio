@@ -7,6 +7,8 @@ import LinkedinIcon from "../../assets/linkedin-icon.svg?react"
 import ThreadsIcon from "../../assets/threads-icon.svg?react"
 import SendMessageIcon from "../../assets/send-message-icon.svg?react"
 
+
+
 import "./Contact.css"
 
 function Contact() {
@@ -30,7 +32,7 @@ function Contact() {
                             <EmailIcon className="email-icon email-icon-contact" />
                         </div>
                         <div className="email-right-side">
-                            <span className="email-tag">Email</span>
+                            <p className="email-tag">Email</p>
                             <p>hgmoralesquino@gmail.com</p>
                         </div>
                     </div>
@@ -41,7 +43,7 @@ function Contact() {
                             <PhoneIcon className="phone-icon" />
                         </div>
                         <div className="phone-right-side">
-                            <span className="phone-tag">Phone</span>
+                            <p className="phone-tag">Phone</p>
                             <p>+1 (615) 4169-9498</p>
                         </div>
                     </div>
@@ -52,7 +54,7 @@ function Contact() {
                             <LocationIcon className="location-icon" />
                         </div>
                         <div className="location-right-side">
-                            <span className="location-tag">Location</span>
+                            <p className="location-tag">Location</p>
                             <p>Guatemala, Guatemala city</p>
                         </div>
                     </div>

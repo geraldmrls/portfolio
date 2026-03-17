@@ -44,13 +44,14 @@ header.scrolled {
 }
 .header-right-side {
   color: white;
-
+  width: 400px;
   font-size: 1.1rem;
   display: flex;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
-  width: 35%;
-  max-width: 500px;
+  width: 100%;
+  max-width: 400px;
 }
 
 .header-right-side .btn-hire-me {
@@ -64,3 +65,24 @@ header.scrolled {
     var(--secondary-color)
   );
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+
+  .header-container {
+    width: 90%;
+  }
+  .gm {
+    font-size: 1.4rem;
+  }
+  .header-right-side {
+    width: 80%;
+    max-width: none;
+    font-size: 0.9rem;
+  }
+  .header-right-side .btn-hire-me {
+    padding: 5px 10px;
+    font-size: 0.9rem;
+  }
+}
+
