@@ -1,0 +1,239 @@
+/* contact title */
+
+.section-label-contact {
+  margin-top: 100px;
+}
+
+.contact-title {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 3rem;
+}
+.amazing {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bolder;
+}
+
+/* description */
+.contact-description {
+  margin-top: 10px;
+  text-align: center;
+  color: var(--text-gray-color);
+  font-size: 1.3rem;
+}
+
+/* --contact container--- */
+.contact-container {
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 8%;
+  padding-right: 8%;
+}
+
+/* contact left side */
+
+.contact-left-side {
+  flex: 1;
+  margin-right: 25px;
+}
+
+.get-in-touch-tag {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.email-container,
+.phone-container,
+.location-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-color-container);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 15px;
+  background-color: #0c0f10;
+  border-radius: 10px;
+  margin-top: 20px;
+  transition: border-color 0.4s ease;
+}
+.email-container:hover,
+.phone-container:hover,
+.location-container:hover {
+  border-color: #1c616e;
+}
+
+.email-container:hover .email-icon-contact,
+.phone-container:hover .phone-icon,
+.location-container:hover .location-icon {
+  background-color: #0f343b;
+}
+
+.email-icon-contact,
+.phone-icon,
+.location-icon {
+  width: 25px;
+  height: 25px;
+  stroke: var(--primary-color);
+  margin-right: 15px;
+  padding: 10px;
+  background-color: rgba(0, 191, 255, 0.15);
+  border-radius: 5px;
+  transition: background-color 0.4s ease;
+}
+.email-tag,
+.phone-tag,
+.location-tag {
+  color: var(--text-gray-color);
+  font-size: 0.9rem;
+}
+
+.follow-me {
+  margin-top: 25px;
+  color: var(--text-gray-color);
+}
+.follow-me-buttons-container {
+  margin-top: 10px;
+}
+.btn-github-contact,
+.btn-linkedin-contact,
+.btn-threads-contact {
+  background-color: rgb(12, 15, 16);
+  border:
+    1px solid,
+    var(--border-color-container);
+  padding: 5px 5px;
+  margin-right: 15px;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.btn-github-contact:hover,
+.btn-linkedin-contact:hover,
+.btn-threads-contact:hover {
+  transform: scale(1.1);
+  border-color: var(--border-color-container-hover);
+}
+
+.github-icon-contact,
+.linkedin-icon-contact,
+.threads-icon-contact {
+  width: 20px;
+  height: 20px;
+}
+
+/* contact right side */
+
+.start-a-project-tag {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.contact-form-description {
+  margin-bottom: 25px;
+  color: var(--text-gray-color);
+}
+
+.contact-right-side {
+  margin-left: 25px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 25px;
+  box-sizing: border-box;
+  transition: border-color 0.4s ease;
+}
+.contact-right-side:hover{
+    border-color: rgb(70, 70, 70);
+}
+
+.inputs-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  flex: 1;
+}
+
+.inputs-container input,
+.inputs-container textarea {
+  width: 100%;
+  padding: 14px;
+  background-color: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: white;
+  font-size: 1rem;
+  box-sizing: border-box;
+  outline: none;
+  transition:
+    border-color 0.4s ease,
+    box-shadow 0.4s ease; /* add this */
+}
+
+.inputs-container input:focus,
+.inputs-container textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 8px rgba(0, 191, 255, 0.3);
+  outline: none;
+}
+
+.inputs-container textarea {
+  resize: none;
+}
+
+.inputs-container input::placeholder,
+.inputs-container textarea::placeholder {
+  color: gray;
+}
+
+.btn-send-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+.btn-send-message:hover {
+  box-shadow: 0px 10px 15px -8px var(--tertiary-color);
+}
+.send-message-icon {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  stroke: white;
+  transition: transform 0.3s ease;
+}
+
+.btn-send-message:hover .send-message-icon {
+  transform: translateX(4px);
+}
+

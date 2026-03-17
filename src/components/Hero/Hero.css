@@ -1,0 +1,167 @@
+.hero {
+  color: white;
+  display: flex;
+  padding-top: 10%;
+}
+
+.hero-left-side {
+  margin-right: 15px;
+}
+
+.availability {
+  color: var(--tertiary-color);
+  display: inline-block;
+  border: 0.5px solid;
+  padding: 8px;
+  border-radius: 20px;
+}
+.hero-title {
+  font-size: 5rem;
+  margin-bottom: 15px;
+}
+
+.developer-name {
+  display: inline-block;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bolder;
+}
+
+.profession {
+  margin-top: 10px;
+  color: #a1a1a1;
+  font-size: 2rem;
+}
+
+.about {
+  margin-top: 25px;
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  width: 80%;
+  color: lightgray;
+}
+
+/* view project and get in touch button */
+.btn-actions-container {
+  display: flex;
+  margin-bottom: 30px;
+}
+.btn-view-projects {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 15px 10px;
+  width: 140px;
+  border: none;
+  border-radius: 10px;
+  margin-right: 10px;
+  color: white;
+  font-size: 0.9rem;
+  transition: box-shadow 0.5s ease;
+  font-weight: bold;
+  cursor: pointer;
+}
+.btn-view-projects:hover {
+  box-shadow: 0px 10px 15px -2px var(--tertiary-color);
+}
+.btn-view-projects:hover .right-arrow-svg {
+  transform: translateX(3px);
+}
+.right-arrow-svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.5s ease;
+}
+
+/* get in touch button */
+.get-in-touch {
+  background-color: black;
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 0px 20px;
+  margin-left: 5px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition:
+    border-color 0.5s ease,
+    background 0.5s ease;
+}
+
+.get-in-touch:hover {
+  border-color: var(--tertiary-color);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 191, 255, 0.15),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+/* contat buttons container */
+
+.btn-github,
+.btn-linkedin,
+.btn-email {
+  background-color: black;
+  border: 1px solid rgb(95, 95, 95);
+  margin-right: 15px;
+  padding: 7px 10px;
+  border-radius: 5px;
+  transition:
+    border-color 0.5s ease,
+    background 0.5s ease;
+  cursor: pointer;
+}
+.btn-github:hover,
+.btn-linkedin:hover,
+.btn-email:hover {
+  border-color: var(--tertiary-color);
+  background: linear-gradient(135deg, rgba(0, 191, 255, 0.15));
+}
+
+.github-icon,
+.linkedin-icon,
+.email-icon {
+  stroke: white;
+  width: 20px;
+  height: 20px;
+}
+
+.linkedin-icon {
+  fill: white;
+}
+
+.linkedin-icon {
+  fill: white;
+  stroke: white;
+}
+
+/* right side */
+.right-side {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.profile-image-container {
+  background-color: lightpink;
+}
+.user-profile {
+  height: 350px;
+  width: 350px;
+  box-shadow: 0 0 70px 10px rgba(0, 191, 255, 0.3);
+  border-radius: 20px;
+}

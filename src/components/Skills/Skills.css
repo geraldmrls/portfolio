@@ -1,0 +1,106 @@
+.skills-expertise-title {
+  margin-top: 100px;
+  text-align: center;
+}
+.skills-description {
+  text-align: center;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  color: var(--text-gray-color);
+}
+
+/* icons */
+.code-icon,
+.tools-icon,
+.method-icon {
+  width: 25px;
+  height: 25px;
+  padding: 10px;
+  border-radius: 5px;
+  margin-right: 15px;
+}
+
+.code-icon {
+  stroke: var(--tertiary-color);
+  background-color: rgba(0, 191, 255, 0.15);
+}
+.tools-icon {
+  fill: #c179fe;
+  background-color: #281539;
+}
+
+.method-icon {
+  fill: var(--primary-color);
+  background-color: #102139;
+}
+
+/* grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.skill-card-frontend,
+.skill-card-tools,
+.skill-card-concepts-techniques {
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.skill-card-frontend {
+  background: linear-gradient(135deg, rgba(0, 191, 255, 0.15));
+  border: 1px solid var(--tertiary-color);
+  transition: background-color 0.4s ease;
+}
+.skill-card-frontend:hover {
+  background-color: oklab(0.715 -0.116822 -0.0824726 / 0.1);
+}
+
+.skill-card-tools {
+  background-color: #1a1023;
+  border: 1px solid #b158ff;
+  transition: background-color 0.4s ease;
+}
+.skill-card-tools:hover {
+  background-color: #251433;
+}
+
+.skill-card-concepts-techniques {
+  background-color: #0d1623;
+  border: 1px solid var(--primary-color);
+  transition: background-color 0.4s ease;
+}
+.skill-card-concepts-techniques:hover {
+  background-color: #11213c;
+}
+
+.skill-title-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.skill-tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 10px;
+}
+
+/* skill tags */
+.skill-tag {
+  background-color: rgb(25, 25, 25);
+  margin-right: 10px;
+  border: 1px solid var(--border-color-buttons);
+  color: rgb(211, 211, 211);
+  padding: 5px 8px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+}
+
+/* design card */
+
+/* end */
+.section-label-skills {
+  margin-top: 75px;
+}
