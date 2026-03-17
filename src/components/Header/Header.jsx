@@ -1,22 +1,42 @@
+import React, { useState, useEffect } from 'react';
+import './Header.css';
 
-import "./Header.css"
+const Header = () => {
+    const [isScrolled, setIsScrolled] = useState(false);
 
-function Header(){
+    useEffect(() => {
+        const handleScroll = () => {
+            // Check if scrolled more than 10px
+            if (window.scrollY > 10) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        // Clean up the listener when the component unmounts
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     return (
-        <header>
-            <div className="header-left-side">
-                <span className="gm">GM</span>
-            </div>
-
-            <div className="header-right-side">
-                <span className="home">Home</span>
-                <span className="work">Work</span>
-                <span className="skills">Skills</span>
-                <span className="contact">Contact</span>
-                <button className="btn-hire-me">Hire Me</button>
+        // If isScrolled is true, it adds the 'scrolled' class
+        <header className={isScrolled ? 'scrolled' : ''}>
+            <div className="header-container">
+                <div className="gm">GM</div>
+                <div className="header-right-side">
+                    <span>Home</span>
+                    <span>Work</span>
+                    <span>Skills</span>
+                    <span>Contact</span>
+                    <button className="btn-hire-me">Hire Me</button>
+                </div>
             </div>
         </header>
-    )
-}
+    );
+};
 
-export default Header
+export default Header;

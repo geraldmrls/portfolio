@@ -1,16 +1,35 @@
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; /* Background spans the whole screen */
+  height: var(--header-height);
+  z-index: 1000;
+  height: 60px;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center; /* Centers the internal container */
+}
+
+header.scrolled {
+  background-color: rgba(20, 20, 20, 0.6); 
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* This container aligns perfectly with your 80% width body */
+.header-container {
+  width: 80%; 
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 0px;
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80%;
-  height: var(--header-height);
-  z-index: 1000;
+  height: 100%;
 }
+
+/* Cleanup: Remove the old centering and padding from the header */
+/* Remove transform: translateX(-50%) and left: 50% from the header */
+
 .gm {
   font-size: 1.8rem;
   background: linear-gradient(
