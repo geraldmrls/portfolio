@@ -1,4 +1,6 @@
 
+import { motion } from "framer-motion"
+
 import RightArrow from "../../assets/right-arrow.svg?react"
 import GitHubIcon from "../../assets/github-icon.svg?react"
 import EmailIcon from "../../assets/email-icon.svg?react"
@@ -9,7 +11,11 @@ import "./Hero.css"
 
 function Hero() {
     return (
-        <section className="hero">
+        <motion.section className="hero" id="home"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}>
             <div className="hero-left-side">
                 <span className="availability">Available to start</span>
                 <h1 className="hero-title">Hi, I'm <p className="developer-name">Gerald M.</p></h1>
@@ -45,7 +51,7 @@ function Hero() {
 
                 </span>
             </div>
-        </section>
+        </motion.section>
     )
 }
 

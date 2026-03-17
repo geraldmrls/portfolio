@@ -4,6 +4,10 @@
   color: white;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 :root{
   --primary-color: #00BFFF;
   --secondary-color: #0080FF;

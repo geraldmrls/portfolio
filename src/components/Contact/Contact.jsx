@@ -1,3 +1,4 @@
+import { motion } from "framer-motion"
 
 import EmailIcon from "../../assets/email-icon.svg?react"
 import PhoneIcon from "../../assets/phone-icon.svg?react"
@@ -13,7 +14,12 @@ import "./Contact.css"
 
 function Contact() {
     return (
-        <>
+        <motion.section id="contact"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+        >
             <div className="section-label section-label-contact">
                 <span>Get in Contact</span>
             </div>
@@ -96,7 +102,7 @@ function Contact() {
                     </div>
                 </div>
             </div>
-        </>
+        </motion.section>
     )
 }
 

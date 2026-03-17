@@ -1,4 +1,6 @@
 
+import { motion } from "framer-motion"
+
 import "./Skills.css"
 import CodeIcon from "../../assets/code-icon.svg?react"
 import ToolsIcon from "../../assets/tools-icon.svg?react"
@@ -21,7 +23,11 @@ import NPMIcon from "../../assets/npm-icon.svg?react"
 
 function Skills() {
     return (
-        <>
+        <motion.section id="skills"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}>
             <h1 className="skills-expertise-title">Skills & Expertise</h1>
             <p className="skills-description">A comprehensive toolkit for building exceptional digital experiences</p>
 
@@ -84,7 +90,7 @@ function Skills() {
                 </div>
             </div>
 
-        </>
+        </motion.section>
     )
 }
 

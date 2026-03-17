@@ -1,9 +1,12 @@
 
+import { motion } from 'framer-motion'
+
 import { projects } from "../../../projects.js"
 import ArrowUpRight from "../../assets/arrow-up-right.svg?react"
 import OpenLink from "../../assets/open-link.svg?react"
 import GitHub from "../../assets/github-icon.svg?react"
 import "./Main.css"
+
 
 
 function Main() {
@@ -25,18 +28,37 @@ function Main() {
     return (
         <>
             <main>
-                <div className="section-label">
+                <motion.div
+                    className="section-label" id="projects"
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5 }}
+                    viewport={{ once: true }}>
                     <span>Projects</span>
-                </div>
-                <div className="brief-description-container">
+                </motion.div>
+
+                <motion.div className="brief-description-container"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    viewport={{ once: true }}>
                     <h1>Featured Work</h1>
                     <p>A selection of projects I've worked on, from concept to deployment</p>
-                </div>
+                </motion.div>
 
                 <div className="projects-grid">
-                    {projects.map(project => {
+                    {projects.map((project, index) => {
                         return (
-                            <div className="project-card" key={project.id}>
+                            <motion.div className="project-card" key={project.id}
+                                initial={{ opacity: 0, y: 50 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{
+                                    duration: 0.5,
+                                    delay: index * 0 // This creates the staggered "wave" effect
+                                }}
+                                viewport={{ once: true, margin: "-50px" }}
+                                whileHover={{ y: -5 }} // Subtle lift on hover
+                            >
                                 <div className="project-image-container">
                                     <img className="project-image" src={project.image} />
                                 </div>
@@ -69,7 +91,7 @@ function Main() {
                                         </a>
                                     </div>
                                 </div>
-                            </div>
+                            </motion.div>
                         )
                     })}
                 </div>
