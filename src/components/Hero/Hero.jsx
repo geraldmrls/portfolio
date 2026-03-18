@@ -18,7 +18,7 @@ function Hero() {
             viewport={{ once: true }}>
             <div className="hero-left-side">
                 <span className="availability">Available to start</span>
-                <h1 className="hero-title">Hi, I'm <p className="developer-name">Gerald M.</p></h1>
+                <h1 className="hero-title">Hi, I'm <p className="developer-name">Gerald Morales</p></h1>
 
                 <h5 className="profession">
                     Web developer
@@ -45,12 +45,17 @@ function Hero() {
                 </div>
             </div>
 
-            <div className="right-side">
+            <motion.div className="right-side"
+                initial={{ opacity: 0, scale: 0.7 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}>
+
                 <img className="user-profile" src={userProfile} />
                 <span className="years-experience">
 
                 </span>
-            </div>
+            </motion.div>
         </motion.section>
     )
 }

@@ -23,17 +23,18 @@ import NPMIcon from "../../assets/npm-icon.svg?react"
 
 function Skills() {
     return (
-        <motion.section id="skills"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}>
+        <motion.section id="skills">
             <h1 className="skills-expertise-title">Skills & Expertise</h1>
             <p className="skills-description">A comprehensive toolkit for building exceptional digital experiences</p>
 
             <div className="skills-grid">
                 {/* front end */}
-                <div className="skill-card-frontend">
+                <motion.div className="skill-card-frontend"
+                    initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                    whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                    viewport={{ once: true }} // "amount: 0.5" means it triggers when half visible
+                    transition={{ duration: 0.4 }}
+                >
                     <div className="skill-title-container">
                         <CodeIcon className="code-icon" />
                         <h3>Frontend Development</h3>
@@ -48,10 +49,15 @@ function Skills() {
 
 
                     </div>
-                </div>
+                </motion.div>
 
                 {/* tools and workflow */}
-                <div className="skill-card-tools">
+                <motion.div className="skill-card-tools"
+                    initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                    whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                    viewport={{ once: true }} // "amount: 0.5" means it triggers when half visible
+                    transition={{ duration: 0.4 }}
+                >
                     <div className="skill-title-container">
                         <ToolsIcon className="tools-icon" />
                         <h3>Tools & Workflow</h3>
@@ -62,15 +68,17 @@ function Skills() {
                         <VercelIcon className="vercel-icon" />
                         <VSCode className="vscode-icon" />
                         <NPMIcon className="npm-icon" />
-
-
-
                     </div>
 
-                </div>
+                </motion.div>
 
                 {/* concepts and techniques */}
-                <div className="skill-card-concepts-techniques">
+                <motion.div className="skill-card-concepts-techniques"
+                    initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                    whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                    viewport={{ once: true }} // "amount: 0.5" means it triggers when half visible
+                    transition={{ duration: 0.4 }}
+                >
                     <div className="skill-title-container">
                         <MethodIcon className="method-icon" />
                         <h3>Concepts & Techniques
@@ -81,13 +89,10 @@ function Skills() {
                         <span className="skill-tag">Responsive Desing</span>
                         <span className="skill-tag">Component Architecture</span>
                         <span className="skill-tag">State Management</span>
-                        <span className="skill-tag">Local Storage</span>
                         <span className="skill-tag">Debouncing</span>
-                        <span className="skill-tag">CSS Animation</span>
-
                     </div>
 
-                </div>
+                </motion.div>
             </div>
 
         </motion.section>

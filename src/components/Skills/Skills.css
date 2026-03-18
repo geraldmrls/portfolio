@@ -1,3 +1,4 @@
+/* --- Global & Typography --- */
 .skills-expertise-title {
   margin-top: 100px;
   text-align: center;
@@ -5,12 +6,72 @@
 
 .skills-description {
   text-align: center;
-  margin-top: 25px;
-  margin-bottom: 25px;
+  margin: 25px 0;
   color: var(--text-gray-color);
 }
 
-/* icons */
+.section-label-skills {
+  margin-top: 75px;
+}
+
+/* --- Grid Container --- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+/* --- Shared Card Styles --- */
+.skill-card-frontend,
+.skill-card-tools,
+.skill-card-concepts-techniques {
+  border-radius: 10px;
+  padding: 20px;
+  transition: background-color 0.4s ease;
+}
+
+.skill-title-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.skill-tags-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  row-gap: 10px;
+}
+
+/* --- Specific Card Themes --- */
+.skill-card-frontend {
+  background: linear-gradient(135deg, rgba(0, 191, 255, 0.15));
+  border: 1px solid var(--tertiary-color);
+}
+
+.skill-card-frontend:hover {
+  background-color: oklab(0.715 -0.116822 -0.0824726 / 0.1);
+}
+
+.skill-card-tools {
+  background-color: #1a1023;
+  border: 1px solid #b158ff;
+}
+
+.skill-card-tools:hover {
+  background-color: #251433;
+}
+
+.skill-card-concepts-techniques {
+  background-color: #0d1623;
+  border: 1px solid var(--primary-color);
+}
+
+.skill-card-concepts-techniques:hover {
+  background-color: #11213c;
+}
+
+/* --- Icons --- */
 .code-icon,
 .tools-icon,
 .method-icon {
@@ -36,97 +97,19 @@
   background-color: #102139;
 }
 
-/* grid */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-}
-
-.skill-card-frontend,
-.skill-card-tools,
-.skill-card-concepts-techniques {
-  border-radius: 10px;
-  padding: 20px;
-}
-
-.skill-card-frontend {
-  background: linear-gradient(135deg, rgba(0, 191, 255, 0.15));
-  border: 1px solid var(--tertiary-color);
-  transition: background-color 0.4s ease;
-}
-
-.skill-card-frontend:hover {
-  background-color: oklab(0.715 -0.116822 -0.0824726 / 0.1);
-}
-
-.skill-card-tools {
-  background-color: #1a1023;
-  border: 1px solid #b158ff;
-  transition: background-color 0.4s ease;
-}
-
-.skill-card-tools:hover {
-  background-color: #251433;
-}
-
-.skill-card-concepts-techniques {
-  background-color: #0d1623;
-  border: 1px solid var(--primary-color);
-  transition: background-color 0.4s ease;
-}
-
-.skill-card-concepts-techniques:hover {
-  background-color: #11213c;
-}
-
-.skill-title-container {
-  display: flex;
-  align-items: center;
-  margin-bottom: 25px;
-}
-
-.skill-tags-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  row-gap: 10px;
-}
-.react-icon,
-.js-icon,
-.html-icon,
-.css-icon,
-.vite-icon,
-.axios-icon {
+/* --- Tech/Tool Icons --- */
+.react-icon, .js-icon, .html-icon, .css-icon, .vite-icon, .axios-icon,
+.git-icon, .github-icon-skill, .vercel-icon, .vscode-icon, .npm-icon {
   width: 40px;
   height: 40px;
   margin-right: 30px;
 }
-.axios-icon {
-  width: 70px;
-}
 
-.git-icon,
-.github-icon-skill,
-.vercel-icon,
-.vscode-icon,
-.npm-icon {
-  width: 45px;
-  height: 45px;
-  margin-right: 30px;
-}
+.axios-icon { width: 70px; }
+.npm-icon { width: 50px; height: 50px; }
+.vercel-icon, .github-icon-skill { stroke: white; }
 
-.npm-icon {
-  width: 50px;
-  height: 50px;
-}
-
-.vercel-icon,
-.github-icon-skill {
-  stroke: white;
-}
-
-/* skill tags */
+/* --- Skill Tags (Text) --- */
 .skill-tag {
   background-color: rgb(25, 25, 25);
   margin-right: 10px;
@@ -137,70 +120,74 @@
   font-size: 0.8rem;
 }
 
-/* design card */
-
-/* end */
-.section-label-skills {
-  margin-top: 75px;
-}
-
-/* Responsive Styles */
+/* --- Responsive Layouts --- */
 @media (max-width: 1024px) {
   .skills-grid {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: 1fr;
   }
 }
 
-@media (width <= 768px) {
-  .react-icon,
-  .js-icon,
-  .html-icon,
-  .css-icon,
-  .vite-icon,
-  .axios-icon {
-    width: 30px;
-    height: 30px;
-    margin-right: 30px;
-  }
-  .axios-icon {
-    width: 70px;
-  }
-
-  /* tools */
-  .git-icon,
-  .github-icon-skill,
-  .vercel-icon,
-  .vscode-icon,
-  .npm-icon {
-    width: 30px;
-    height: 30px;
-    margin-right: 30px;
-  }
-
-  .npm-icon {
-    width: 50px;
-    height: 50px;
+@media (max-width: 768px) {
+  .skills-grid {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 20px;
+    padding-bottom: 10px;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+    perspective: 1000px;
   }
 
   .skill-card-frontend,
   .skill-card-tools,
   .skill-card-concepts-techniques {
-    padding: 15px;
+    flex-shrink: 0;
+    width: 250px;
+    background-color: #080808;
+    background-image: none; /* Required to override gradients */
+    scroll-snap-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .skill-card-frontend:hover,
+  .skill-card-tools:hover,
+  .skill-card-concepts-techniques:hover {
+    background-color: #080808;
   }
 
   .skill-title-container {
     flex-direction: column;
     text-align: center;
+    margin-bottom: 15px;
   }
 
-  .code-icon,
-  .tools-icon,
-  .method-icon {
+  .code-icon, .tools-icon, .method-icon {
     margin-right: 0;
     margin-bottom: 10px;
   }
 
   .skill-tags-container {
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    gap: 10px;
+  }
+
+  .skill-tag {
+    margin-right: 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+  }
+
+  .react-icon, .js-icon, .html-icon, .css-icon, .vite-icon, .axios-icon,
+  .git-icon, .github-icon-skill, .vercel-icon, .vscode-icon, .npm-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 0;
   }
 }

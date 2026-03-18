@@ -13,6 +13,7 @@ main {
   flex: 1;
   height: 1px;
   background: linear-gradient(to right, transparent, gray);
+  margin-right: 15px;
 }
 
 .section-label::after {
@@ -20,6 +21,7 @@ main {
   flex: 1;
   height: 1px;
   background: linear-gradient(to left, transparent, gray);
+  margin-left: 15px;
 }
 
 .section-label span {
@@ -164,7 +166,7 @@ main {
   color: oklch(0.65476 0.11501 213.794);
 }
 
-.live-text{
+.live-text {
   margin-right: 4px;
 }
 
@@ -231,8 +233,41 @@ a {
 }
 
 @media (width <=768px) {
+@media (width <= 768px) {
+  .projects-grid {
+    display: flex;
+    /* Use 'auto' instead of 'scroll' for a cleaner native feel */
+    overflow-x: auto;
+    overflow-y: hidden;
+    /* Stops the card exactly in the middle */
+    scroll-snap-type: x mandatory; 
+    gap: 20px;
+    padding: 20px 10vw; /* Shows a peek of the next card */
+    scrollbar-width: none; /* Hides scrollbar on Firefox */
+    perspective: 1000px; /* Prepares for 3D effects */
+  }
 
-  .project-image-container{
+  .projects-grid::-webkit-scrollbar {
+    display: none; /* Hides scrollbar on Chrome/Safari */
+  }
+
+  .project-card {
+    min-width: 75vw;
+    scroll-snap-align: center;
+    /* Creative touch: Glassmorphism background */
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .project-image-container {
+    height: 200px;
+  }
+
+
+}
+
+  .project-image-container {
     height: 180px;
   }
 

@@ -14,16 +14,18 @@ import "./Contact.css"
 
 function Contact() {
     return (
-        <motion.section id="contact"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-        >
-            <div className="section-label section-label-contact">
+        <section id="contact">
+
+            <div className="section-label-contact">
                 <span>Get in Contact</span>
             </div>
-            <h1 className="contact-title">Let's Build Something <span className="amazing">Amazing</span></h1>
+
+            <motion.h1 className="contact-title"
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.3 }}
+                viewport={{ once: true }}
+            >Let's Build Something <span className="amazing">Amazing</span></motion.h1>
             <p className="contact-description">
                 Have a project in mind? I'd love to hear about it. Let's create something great together
             </p>
@@ -33,7 +35,11 @@ function Contact() {
                     <span className="get-in-touch-tag">Get in Touch</span>
 
                     {/* email */}
-                    <div className="email-container">
+                    <motion.div className="email-container"
+                        initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8 }}
+                        viewport={{ once: true }}>
                         <div className="email-left-side">
                             <EmailIcon className="email-icon email-icon-contact" />
                         </div>
@@ -41,10 +47,14 @@ function Contact() {
                             <p className="email-tag">Email</p>
                             <p>hgmoralesquino@gmail.com</p>
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* phone */}
-                    <div className="phone-container">
+                    <motion.div className="phone-container"
+                        initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8 }}
+                        viewport={{ once: true }}>
                         <div className="phone-left-side">
                             <PhoneIcon className="phone-icon" />
                         </div>
@@ -52,10 +62,14 @@ function Contact() {
                             <p className="phone-tag">Phone</p>
                             <p>+1 (615) 4169-9498</p>
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* location */}
-                    <div className="location-container">
+                    <motion.div className="location-container"
+                        initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8 }}
+                        viewport={{ once: true }}>
                         <div className="location-left-side">
                             <LocationIcon className="location-icon" />
                         </div>
@@ -63,28 +77,51 @@ function Contact() {
                             <p className="location-tag">Location</p>
                             <p>Guatemala, Guatemala city</p>
                         </div>
-                    </div>
+                    </motion.div>
 
                     <p className="follow-me">FOLLOW ME</p>
 
                     <div className="follow-me-buttons-container">
-                        <button className="btn-github-contact">
-                            <GitHubIcon className="github-icon github-icon-contact" />
-                        </button>
 
-                        <button className="btn-linkedin-contact">
-                            <LinkedinIcon className="linkedin-icon linkedin-icon-contact" />
-                        </button>
+                        <a href="https://github.com/geraldmrls" target="_blank">
+                            <motion.button className="btn-github-contact"
+                                initial={{ opacity: 0, scale: 0 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.3 }}
+                                viewport={{ once: true }}>
+                                <GitHubIcon className="github-icon github-icon-contact" />
+                            </motion.button>
+                        </a>
 
-                        <button className="btn-threads-contact">
-                            <ThreadsIcon className="threads-icon-contact" />
-                        </button>
+                        <a href="https://www.linkedin.com/in/gerald-morales-807283218/" target="_blank">
+                            <motion.button className="btn-linkedin-contact"
+                                initial={{ opacity: 0, scale: 0 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.3 }}
+                                viewport={{ once: true }}>
+                                <LinkedinIcon className="linkedin-icon linkedin-icon-contact" />
+                            </motion.button>
+                        </a>
+
+                        <a href="https://www.threads.com/@geraldmrls" target="_blank">
+                            <motion.button className="btn-threads-contact"
+                                initial={{ opacity: 0, scale: 0 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.3 }}
+                                viewport={{ once: true }}>
+                                <ThreadsIcon className="threads-icon-contact" />
+                            </motion.button>
+                        </a>
 
                     </div>
 
                 </div>
 
-                <div className="contact-right-side">
+                <motion.div className="contact-right-side"
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}>
                     <span className="start-a-project-tag">Start a Project</span>
                     <p className="contact-form-description">
                         Interested in working together? Send me a message and I'll reply back to you within 24 hours
@@ -100,9 +137,9 @@ function Contact() {
 
                         </button>
                     </div>
-                </div>
+                </motion.div>
             </div>
-        </motion.section>
+        </section>
     )
 }
 

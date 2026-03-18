@@ -34,7 +34,7 @@ function Main() {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5 }}
                     viewport={{ once: true }}>
-                    <span>Projects</span>
+                    <span> Projects </span>
                 </motion.div>
 
                 <motion.div className="brief-description-container"
@@ -47,17 +47,13 @@ function Main() {
                 </motion.div>
 
                 <div className="projects-grid">
-                    {projects.map((project, index) => {
+                    {projects.map((project) => {
                         return (
                             <motion.div className="project-card" key={project.id}
-                                initial={{ opacity: 0, y: 50 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{
-                                    duration: 0.5,
-                                    delay: index * 0 // This creates the staggered "wave" effect
-                                }}
-                                viewport={{ once: true, margin: "-50px" }}
-                                whileHover={{ y: -5 }} // Subtle lift on hover
+                                initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                                viewport={{ once: true}} // "amount: 0.5" means it triggers when half visible
+                                transition={{ duration: 0.4 }}
                             >
                                 <div className="project-image-container">
                                     <img className="project-image" src={project.image} />

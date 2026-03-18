@@ -8,6 +8,10 @@
   margin-right: 15px;
 }
 
+.contact-buttons-container{
+  z-index: 100;
+}
+
 .availability {
   color: var(--tertiary-color);
   display: inline-block;
