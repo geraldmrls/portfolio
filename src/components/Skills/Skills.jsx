@@ -1,4 +1,4 @@
-
+import { useEffect, useRef, useState } from 'react'
 import { motion } from "framer-motion"
 
 import "./Skills.css"
@@ -22,6 +22,30 @@ import VSCode from "../../assets/vscode-icon.svg?react"
 import NPMIcon from "../../assets/npm-icon.svg?react"
 
 function Skills() {
+
+    const [activeIndex, setActiveIndex] = useState(0);
+    const cardRefs = useRef([]);
+    const numberOfSkills = [1, 2, 3];
+
+    useEffect(() => {
+        const observers = [];
+
+        cardRefs.current.forEach((card, i) => {
+            const observer = new IntersectionObserver(
+                ([entry]) => {
+                    if (entry.isIntersecting) setActiveIndex(i);
+                },
+                { threshold: 0.6 }
+            );
+            if (card) {
+                observer.observe(card);
+                observers.push(observer);
+            }
+        });
+
+        return () => observers.forEach(obs => obs.disconnect());
+    }, []);
+
     return (
         <motion.section id="skills">
             <h1 className="skills-expertise-title">Skills & Expertise</h1>
@@ -30,6 +54,7 @@ function Skills() {
             <div className="skills-grid">
                 {/* front end */}
                 <motion.div className="skill-card-frontend"
+                    ref={el => cardRefs.current[0] = el}
                     initial={{ opacity: 0, scale: 0.9, y: 20 }}
                     whileInView={{ opacity: 1, scale: 1, y: 0 }}
                     viewport={{ once: true }} // "amount: 0.5" means it triggers when half visible
@@ -53,6 +78,7 @@ function Skills() {
 
                 {/* tools and workflow */}
                 <motion.div className="skill-card-tools"
+                    ref={el => cardRefs.current[1] = el}
                     initial={{ opacity: 0, scale: 0.9, y: 20 }}
                     whileInView={{ opacity: 1, scale: 1, y: 0 }}
                     viewport={{ once: true }} // "amount: 0.5" means it triggers when half visible
@@ -74,6 +100,7 @@ function Skills() {
 
                 {/* concepts and techniques */}
                 <motion.div className="skill-card-concepts-techniques"
+                    ref={el => cardRefs.current[2] = el}
                     initial={{ opacity: 0, scale: 0.9, y: 20 }}
                     whileInView={{ opacity: 1, scale: 1, y: 0 }}
                     viewport={{ once: true }} // "amount: 0.5" means it triggers when half visible
@@ -92,6 +119,14 @@ function Skills() {
                     </div>
 
                 </motion.div>
+            </div>
+
+            <div className="page-scroll-skills">
+                {numberOfSkills.map((_, i) => {
+                    return (
+                        <div key={i} className={`skills-dot ${i===activeIndex ? "active" : ""}`}></div>
+                    )
+                })}
             </div>
 
         </motion.section>

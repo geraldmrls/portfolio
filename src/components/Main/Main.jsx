@@ -1,4 +1,4 @@
-
+import { useState,useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 
 import { projects } from "../../../projects.js"
@@ -10,6 +10,27 @@ import "./Main.css"
 
 
 function Main() {
+    const [activeIndex, setActiveIndex] = useState(0);
+    const cardRefs = useRef([]);
+
+    useEffect(() => {
+        const observers = [];
+
+        cardRefs.current.forEach((card, i) => {
+            const observer = new IntersectionObserver(
+                ([entry]) => {
+                    if (entry.isIntersecting) setActiveIndex(i);
+                },
+                { threshold: 0.6 }
+            );
+            if (card) {
+                observer.observe(card);
+                observers.push(observer);
+            }
+        });
+
+        return () => observers.forEach(obs => obs.disconnect());
+    }, []);
 
     function generateTech(project) {
         return (
@@ -24,6 +45,7 @@ function Main() {
             </>
         )
     }
+
 
     return (
         <>
@@ -47,12 +69,12 @@ function Main() {
                 </motion.div>
 
                 <div className="projects-grid">
-                    {projects.map((project) => {
+                    {projects.map((project, index) => {
                         return (
-                            <motion.div className="project-card" key={project.id}
+                            <motion.div className="project-card" key={project.id} ref={el=>cardRefs.current[index] = el}
                                 initial={{ opacity: 0, scale: 0.9, y: 20 }}
                                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                                viewport={{ once: true}} // "amount: 0.5" means it triggers when half visible
+                                viewport={{ once: true }} // "amount: 0.5" means it triggers when half visible
                                 transition={{ duration: 0.4 }}
                             >
                                 <div className="project-image-container">
@@ -88,6 +110,16 @@ function Main() {
                                     </div>
                                 </div>
                             </motion.div>
+                        )
+                    })}
+
+
+                </div>
+
+                <div className="page-scroll-container">
+                    {projects.map((_, i) => {
+                        return (
+                            <div key={i} className={`page-circle ${i===activeIndex ? "active" : ""}`}></div>
                         )
                     })}
                 </div>
