@@ -8,7 +8,7 @@
   margin-right: 15px;
 }
 
-.contact-buttons-container{
+.contact-buttons-container {
   z-index: 100;
 }
 
@@ -109,7 +109,6 @@
     background 0.5s ease;
 }
 
-
 .get-in-touch:hover {
   border-color: var(--tertiary-color);
   background: linear-gradient(
@@ -168,22 +167,23 @@
   max-width: 400px;
 }
 
-.profile-image-container {
-  background-color: lightpink;
-}
+/*   height: 720px;
+  width: 1280px; */
 
+.user-profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .user-profile {
-  height: 350px;
-  width: 350px;
-  box-shadow: 0 0 70px 10px rgba(0, 191, 255, 0.3);
+  width: 500px;
   border-radius: 20px;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 /* Responsive Styles */
 @media (max-width: 1024px) {
   
-
   .hero {
     flex-direction: column-reverse;
     align-items: center;
@@ -227,12 +227,11 @@
 }
 
 @media (width<= 768px) {
-  
-  .hero{
+  .hero {
     padding-top: 30%;
   }
 
-  .availability{
+  .availability {
     display: none;
   }
 
@@ -244,9 +243,9 @@
     font-size: 1.2rem;
   }
 
-  .user-profile {
-    width: 200px;
-    height: 200px;
+  .user-profile{
+    height: 135px;
+    width: 240px;
   }
 
   .about {

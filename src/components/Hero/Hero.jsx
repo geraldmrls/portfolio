@@ -8,6 +8,7 @@ import LinkedinIcon from "../../assets/linkedin-icon.svg?react"
 
 // import userProfile from "../../assets/user-profile.jpg"
 import geraldPicture from "../../assets/gerald-picture.jpg"
+// import geraldPicture from "../../assets/gerald-1.jpeg"
 import "./Hero.css"
 
 function Hero() {
@@ -83,7 +84,9 @@ function Hero() {
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}>
 
-                <img className="user-profile" src={geraldPicture} />
+                <div className="user-profile-container">
+                    <img className="user-profile" src={geraldPicture} />
+                </div>
                 <span className="years-experience">
 
                 </span>
